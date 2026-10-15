@@ -1,0 +1,208 @@
+/* Variabel warna dasar */
+:root {
+  --page: #d9e0e6;
+  --card: #ffffff;
+  --ink: #1b2733;
+  --muted: #55636f;
+  --line: #b7c2cc;
+  --result-bg: #eef2f5;
+
+  --accent: #1b2733;
+  --accent-dark: #0f1820;
+}
+
+/* Warna operas */
+.op-tambah { --accent: #1e7b5a; --accent-dark: #166046; }
+.op-kurang { --accent: #b23a48; --accent-dark: #8f2e39; }
+.op-kali   { --accent: #2e5aa8; --accent-dark: #234687; }
+.op-bagi   { --accent: #7a4f9e; --accent-dark: #603e7c; }
+
+body {
+  font-family: "Karla", "Segoe UI", sans-serif;
+  background-color: var(--page);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 3rem 1rem 2rem;
+}
+
+.panel {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.75rem;
+}
+
+.judul {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.sub {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Menu utama */
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: var(--accent);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.tile:hover {
+  background-color: var(--accent-dark);
+  color: #ffffff;
+}
+
+.tile:active {
+  transform: translateY(2px);
+}
+
+.tile i {
+  font-size: 1.75rem;
+}
+
+.tile .nama {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.tile .contoh {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* operasi */
+.kembali {
+  display: inline-block;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.kembali:hover {
+  color: var(--accent);
+}
+
+.judul-op {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.judul-op .ikon {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  background-color: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.judul-op h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.form-label {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.form-control {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  color: var(--ink);
+}
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(27, 39, 51, 0.12);
+}
+
+.btn-hitung {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+}
+
+.btn-hitung:hover,
+.btn-hitung:focus {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #ffffff;
+}
+
+.btn-reset {
+  background-color: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+}
+
+.btn-reset:hover {
+  background-color: var(--result-bg);
+  border-color: var(--muted);
+  color: var(--ink);
+}
+
+.hasil {
+  margin-top: 1.25rem;
+  padding: 0.9rem 1rem;
+  background-color: var(--result-bg);
+  border-left: 5px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 1.15rem;
+}
+
+.hasil .nilai {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+/* Fokus keyboard */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile { transition: none; }
+  .tile:active { transform: none; }
+}
